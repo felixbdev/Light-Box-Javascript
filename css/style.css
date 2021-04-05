@@ -1,0 +1,123 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-grid{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,1fr);
+    grid-template-areas:
+    "img1 img2 img3 img3 img3"
+    "img1 img2 img3 img3 img3"
+    "img4 img4 img3 img3 img3"
+    "img4 img4 img3 img3 img3"
+    "img6 img6 img5 img5 img5"
+    "img6 img6 img5 img5 img5";
+    gap: 5px;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img:hover{
+    filter: grayscale(50%);
+    cursor: pointer;
+    transition: filter .5s;
+}
+
+.img-1{
+    grid-area: img1;
+}
+
+.img-2{
+    grid-area: img2;
+}
+
+.img-3{
+    grid-area: img3;
+}
+
+.img-4{
+    grid-area:img4;
+}
+
+.img-5{
+    grid-area: img5;
+}
+
+.img-6{
+    grid-area:img6;
+}
+
+.container-img{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform:translateX(-150%);
+    background: rgba(0, 0, 0, 0.746);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s ease-in;
+}
+
+.move{
+    transform:translateX(0);
+}
+
+.img-show{
+    height: 80%;
+    display: block;
+    transform: scale(0);
+    object-fit: cover;
+    transition: transform .2s .4s;
+}
+
+.show{
+    transform: scale(1);
+}
+
+.bx.bx-x{
+    position: absolute;
+    color: #fff;
+    top: 20px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.copy{
+    position: fixed;
+    color: #fff;
+    bottom: 30px;
+}
+
+
+
+@media screen  and (max-width:700px) {
+    .img-show{
+        width: 90%;
+    }
+
+    .copy{
+        bottom: 20px;
+    }
+
+    
+    .bx.bx-x{
+        top: 10px;
+        font-size: 25px;
+    }
+}
