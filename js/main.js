@@ -17,7 +17,8 @@ const addImage = (srcImage, altImage) => {
 }
 
 containerImage.addEventListener('click', e =>{
-    if(e.target.classList.contains('bx-x')||e.target.classList.contains('container-img')) 
-    -containerImage.classList.toggle('move')
-    imageShow.classList.toggle('show')
+    if(e.target.classList.contains('bx-x')||e.target.classList.contains('container-img')) {
+    imageShow.classList.toggle('show');
+    containerImage.classList.toggle('move');
+    }
 });
